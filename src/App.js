@@ -4,14 +4,20 @@ import Header from "./components/Header/Header";
 import Inventory from "./components/Inventroy/Inventory";
 import NotFound from "./components/NotFound/NotFound";
 import OrderReview from "./components/OrderReview/OrderReview";
+import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 import Product from "./components/Product/Product";
 import Shop from "./components/Shop/Shop";
 
 function App() {
+  const activeStyle =  {
+      fontWeight: "bold",
+      color: "red"
+  }
   return (
     <div>
-      <Header></Header>
+     
       <Router>
+      <Header></Header>
         <Switch>
           <Route exact path="/">
             <Shop></Shop>
@@ -22,9 +28,12 @@ function App() {
           <Route path="/review">
             <OrderReview></OrderReview>
           </Route>
-          <Route path="/inventory">
-            <Inventory></Inventory>
-          </Route>
+        <Route path="/inventory">
+          <Inventory></Inventory>
+        </Route>
+        <Route path="/placeOrder">
+        <PlaceOrder></PlaceOrder>
+        </Route>
           <Route path="*">
             <NotFound></NotFound>
           </Route>
